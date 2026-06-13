@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)file:///Users/ryanewen/Downloads/index_44.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jay Rai | Therapist Backed by Science</title>
+<meta name="description" content="Neuroscience-backed therapy that helps high performers break the patterns holding them back — and quit therapy for good. Therapist backed by science.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF7F2;
+    --paper-2:#F2ECE2;
+    --ink:#191C28;
+    --ink-soft:#4A4E5C;
+    --coral:#7C4DD6;
+    --coral-deep:#5E33B5;
+    --teal:#1F4E4A;
+    --line:#E2D9CC;
+    --shadow:0 22px 60px -28px rgba(25,28,40,.34);
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:-.015em}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .eyebrow{
+    font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--coral-deep);
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--coral)}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:'Inter',sans-serif;font-weight:600;font-size:.96rem;
+    padding:15px 26px;border-radius:50px;border:1px solid transparent;
+    cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+  }
+  .btn-primary{background:var(--coral);color:#fff;box-shadow:0 12px 28px -12px rgba(124,77,214,.7)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--coral-deep);box-shadow:0 18px 34px -12px rgba(124,77,214,.8)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{background:#fff;transform:translateY(-2px)}
+  .btn-arrow{transition:transform .25s ease}
+  .btn:hover .btn-arrow{transform:translateX(4px)}
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:60;
+    background:rgba(250,247,242,.82);backdrop-filter:blur(12px);
+    border-bottom:1px solid transparent;transition:border-color .3s ease,box-shadow .3s ease;
+  }
+  header.nav.scrolled{border-color:var(--line);box-shadow:0 8px 24px -20px rgba(25,28,40,.5)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{font-family:'Fraunces',serif;font-size:1.85rem;font-weight:600;letter-spacing:.01em}
+  .logo span{color:var(--coral)}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a.lnk{font-size:.92rem;font-weight:500;color:var(--ink-soft);transition:color .2s}
+  .nav-links a.lnk:hover{color:var(--ink)}
+  .nav-cta{padding:11px 20px;font-size:.88rem}
+  .burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px}
+  .burger span{width:24px;height:2px;background:var(--ink);display:block;transition:.3s}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;padding:64px 0 36px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+  .rating{display:inline-flex;align-items:center;gap:9px;font-size:.86rem;color:var(--ink-soft);margin-bottom:22px;font-weight:500}
+  .stars{color:var(--coral);letter-spacing:2px;font-size:.95rem}
+  h1.headline{font-size:clamp(2.9rem,6vw,4.6rem);margin-bottom:8px}
+  h1.headline em{font-style:italic;color:var(--coral);position:relative}
+  .tagline{
+    font-family:'Inter',sans-serif;font-weight:600;font-size:1.02rem;color:var(--teal);
+    letter-spacing:.04em;text-transform:uppercase;margin:18px 0 14px;
+  }
+  .hero p.lede{font-size:1.12rem;color:var(--ink-soft);max-width:30em;margin-bottom:30px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-media{position:relative}
+  .hero-media .frame{
+    border-radius:200px 200px 24px 24px;overflow:hidden;box-shadow:var(--shadow);
+    background:var(--paper-2);aspect-ratio:4/5;
+  }
+  .hero-media .frame img{width:100%;height:100%;object-fit:cover;object-position:center top}
+  .hero-media .badge{
+    position:absolute;left:-18px;bottom:32px;background:#fff;border:1px solid var(--line);
+    border-radius:16px;padding:14px 18px;box-shadow:var(--shadow);max-width:210px;
+  }
+  .hero-media .badge .k{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--coral);line-height:1}
+  .hero-media .badge .v{font-size:.78rem;color:var(--ink-soft);margin-top:3px}
+  .synapse{position:absolute;top:14px;right:-6px;width:120px;opacity:.5;pointer-events:none}
+
+  /* ---------- Logo wall ---------- */
+  .logos{padding:64px 0 96px}
+  .logos .logos-inner{width:100%;max-width:1600px;margin:0 auto;padding:0 5vw}
+  .logos .label{text-align:center;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:56px}
+  .logo-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);
+    gap:60px 50px;align-items:center;justify-items:center;
+    width:100%;margin:0 auto;
+  }
+  .logo-grid img{
+    height:56px;width:auto;max-width:180px;object-fit:contain;
+    filter:grayscale(1);opacity:.62;transition:opacity .35s,filter .35s,transform .35s;
+  }
+  .logo-grid img:hover{filter:grayscale(0);opacity:1;transform:scale(1.06)}
+
+  /* ---------- Section scaffolding ---------- */
+  section{padding:84px 0}
+  .sec-head{max-width:34em;margin-bottom:48px}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+  .sec-head h2{font-size:clamp(2rem,3.6vw,2.9rem);margin:16px 0 14px}
+  .sec-head p{color:var(--ink-soft);font-size:1.06rem}
+
+  /* ---------- How I help (3 disciplines) ---------- */
+  .approach{background:var(--ink);color:var(--paper)}
+  .approach .eyebrow{color:#D9C7F5}
+  .approach .eyebrow::before{background:var(--coral)}
+  .approach h2{color:var(--paper)}
+  .approach .sec-head p{color:#B9BCC8}
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .pillar{
+    background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;padding:32px 26px;transition:transform .3s ease,border-color .3s ease;
+  }
+  .pillar:hover{transform:translateY(-6px);border-color:rgba(124,77,214,.6)}
+  .pillar .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--coral);margin-bottom:18px}
+  .pillar .ic svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.7}
+  .pillar h3{font-size:1.34rem;color:var(--paper);margin-bottom:8px}
+  .pillar p{color:#B9BCC8;font-size:.96rem}
+  .approach .closer{
+    margin-top:40px;text-align:center;font-family:'Fraunces',serif;font-style:italic;
+    font-size:clamp(1.3rem,2.4vw,1.7rem);color:var(--paper);max-width:24em;margin-left:auto;margin-right:auto;line-height:1.4;
+  }
+  .approach .closer b{color:var(--coral);font-style:normal;font-weight:500}
+
+  /* ---------- Book ---------- */
+  .book-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+  .book-cover{position:relative}
+  .book-cover img{border-radius:8px;box-shadow:0 30px 60px -24px rgba(25,28,40,.5);transform:rotate(-3deg);transition:transform .4s ease}
+  .book-cover:hover img{transform:rotate(0)}
+  .book-cover .pub{position:absolute;top:-14px;right:6px;background:var(--teal);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:7px 13px;border-radius:30px}
+  .book-info h2{font-size:clamp(2rem,3.4vw,2.7rem);margin:14px 0 6px}
+  .book-info .formats{font-size:.9rem;color:var(--ink-soft);font-weight:500;margin-bottom:22px}
+  .quote{
+    border-left:3px solid var(--coral);padding:6px 0 6px 22px;margin:24px 0 28px;
+    font-family:'Fraunces',serif;font-style:italic;font-size:1.16rem;color:var(--ink);line-height:1.45;
+  }
+  .quote cite{display:block;margin-top:12px;font-family:'Inter',sans-serif;font-style:normal;font-size:.82rem;color:var(--ink-soft);font-weight:500}
+
+  /* ---------- Testimonials ---------- */
+  .testi{background:var(--paper-2)}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .tcard{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column;gap:14px}
+  .tcard .stars{font-size:.9rem}
+  .tcard p{font-family:'Fraunces',serif;font-size:1.18rem;line-height:1.4;color:var(--ink)}
+  .tcard .who{font-size:.84rem;color:var(--ink-soft);font-weight:500;margin-top:auto}
+
+  /* ---------- About / credentials ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .about-media{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .about-media img{border-radius:16px;height:100%;object-fit:cover;box-shadow:var(--shadow)}
+  .about-media img:first-child{grid-row:span 2;aspect-ratio:3/4}
+  .about-media img:nth-child(2){aspect-ratio:4/3}
+  .about-media img:nth-child(3){aspect-ratio:4/3}
+  .creds{list-style:none;margin-top:24px;display:flex;flex-direction:column;gap:16px}
+  .creds li{display:flex;gap:14px;font-size:.98rem;color:var(--ink-soft)}
+  .creds li b{color:var(--ink);font-weight:600}
+  .creds .tick{flex:0 0 24px;width:24px;height:24px;border-radius:50%;background:var(--teal);display:grid;place-items:center;margin-top:2px}
+  .creds .tick svg{width:13px;height:13px;stroke:#fff;stroke-width:2.4;fill:none}
+
+  /* ---------- Services / pricing ---------- */
+  .services{background:var(--teal);color:#fff}
+  .services .eyebrow{color:#A8D8D2}
+  .services .eyebrow::before{background:#A8D8D2}
+  .services h2{color:#fff}
+  .services .sec-head p{color:#CDE5E2}
+  .price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .pcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:26px 22px;transition:transform .3s,background .3s}
+  .pcard:hover{transform:translateY(-5px);background:rgba(255,255,255,.1)}
+  .pcard h4{font-size:1.18rem;color:#fff;margin-bottom:6px}
+  .pcard .amt{font-family:'Fraunces',serif;font-size:2.1rem;color:#fff;line-height:1}
+  .pcard .amt small{font-size:.8rem;font-family:'Inter',sans-serif;color:#CDE5E2;font-weight:500}
+  .pcard p{font-size:.86rem;color:#CDE5E2;margin-top:10px}
+  .loc-note{margin-top:30px;font-size:.92rem;color:#CDE5E2}
+  .loc-note b{color:#fff}
+
+  /* ---------- Final CTA ---------- */
+  .final{text-align:center}
+  .final h2{font-size:clamp(2.2rem,4.4vw,3.4rem);max-width:14em;margin:16px auto 16px}
+  .final p.sub{color:var(--ink-soft);font-size:1.1rem;max-width:30em;margin:0 auto 30px}
+  .final .contact-line{margin-top:30px;font-size:.96rem;color:var(--ink-soft)}
+  .final .contact-line a{color:var(--coral-deep);font-weight:600}
+
+  /* ---------- Newsletter ---------- */
+  .news{background:var(--ink);color:var(--paper);border-radius:26px;padding:80px 46px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:30px;margin-top:64px;min-height:440px;justify-content:center}
+  .news>div{max-width:34em}
+  .news h3{color:var(--paper);font-size:2.2rem;margin-bottom:12px}
+  .news p{color:#B9BCC8;font-size:1.04rem}
+  .news form{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;width:100%;max-width:520px}
+  .news input{flex:1;min-width:180px;padding:16px 18px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;font-family:inherit;font-size:.95rem}
+  .news input::placeholder{color:#8A8E9C}
+  .news input:focus{outline:2px solid var(--coral);outline-offset:1px}
+  .news form .btn{width:100%;justify-content:center}
+
+  /* ---------- Footer ---------- */
+  footer{padding:54px 0 40px;border-top:1px solid var(--line)}
+  .foot-inner{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
+  .foot-logo{font-family:'Fraunces',serif;font-size:1.95rem;font-weight:600}
+  .foot-logo span{color:var(--coral)}
+  .foot-tag{font-size:.86rem;color:var(--ink-soft);margin-top:6px;letter-spacing:.05em}
+  .foot-links{display:flex;gap:26px;flex-wrap:wrap;font-size:.92rem;color:var(--ink-soft)}
+  .foot-links a:hover{color:var(--ink)}
+  .foot-social{display:flex;gap:14px;margin-top:14px}
+  .foot-social a{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:.25s}
+  .foot-social a:hover{background:var(--ink);border-color:var(--ink)}
+  .foot-social a:hover svg{stroke:#fff}
+  .foot-social svg{width:17px;height:17px;stroke:var(--ink-soft);fill:none;stroke-width:1.7}
+  .copyright{margin-top:34px;font-size:.8rem;color:var(--ink-soft);text-align:center}
+
+  /* ---------- Reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:920px){
+    .hero-grid,.book-grid,.about-grid{grid-template-columns:1fr;gap:38px}
+    .pillars,.testi-grid{grid-template-columns:1fr}
+    .price-grid{grid-template-columns:1fr 1fr}
+    .logo-grid{grid-template-columns:repeat(3,1fr);gap:50px 40px}
+    .about-media{max-width:440px}
+    .hero-media{max-width:420px;margin:0 auto}
+    .news{padding:34px}
+  }
+  @media(max-width:680px){
+    header.nav{backdrop-filter:none;-webkit-backdrop-filter:none}
+    .nav-links{
+      position:fixed;inset:0;background:var(--coral);flex-direction:column;
+      justify-content:center;align-items:flex-start;gap:6px;
+      padding:90px 34px 48px;z-index:55;
+      transform:translateX(100%);transition:transform .4s cubic-bezier(.7,0,.2,1);
+    }
+    .nav-links.open{transform:none}
+    .nav-links a.lnk{
+      font-family:'Fraunces',serif;font-size:2rem;font-weight:600;color:#fff;
+      padding:12px 0;width:100%;border-bottom:1px solid rgba(255,255,255,.16);transition:opacity .2s;
+    }
+    .nav-links a.lnk:hover{color:#fff;opacity:.75}
+    .nav-cta{
+      margin-top:28px;align-self:stretch;justify-content:center;
+      background:#fff;color:var(--coral-deep);font-size:1.05rem;padding:16px 24px;
+    }
+    .nav-cta:hover{background:var(--ink);color:#fff}
+    .burger{display:flex;z-index:60}
+    header.nav.menu-open{background:transparent;box-shadow:none;border-color:transparent}
+    header.nav.menu-open .logo,header.nav.menu-open .logo span{color:#fff}
+    header.nav.menu-open .burger span{background:#fff}
+    header.nav.menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    header.nav.menu-open .burger span:nth-child(2){opacity:0}
+    header.nav.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .price-grid{grid-template-columns:1fr}
+    .logo-grid{grid-template-columns:repeat(2,1fr);gap:42px 32px}
+    .logo-grid img{height:44px}
+    .hero-media .badge{left:8px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    *{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="file:///Users/ryanewen/Downloads/index_44.html#top" class="logo">Jay<span>Rai</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a class="lnk" href="file:///Users/ryanewen/Downloads/index_44.html#approach">How I help</a>
+      <a class="lnk" href="file:///Users/ryanewen/Downloads/index_44.html#book">The book</a>
+      <a class="lnk" href="file:///Users/ryanewen/Downloads/index_44.html#about">About</a>
+      <a class="lnk" href="file:///Users/ryanewen/Downloads/index_44.html#services">Therapy</a>
+      <a class="lnk" href="file:///Users/ryanewen/Downloads/index_44.html#contact">Contact</a>
+      <a class="btn btn-primary nav-cta" href="file:///Users/ryanewen/Downloads/index_44.html#contact">Get Started</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal in">
+      <div class="rating"><span class="stars">★★★★★</span> Trusted by leaders at Google, Amazon &amp; Salesforce</div>
+      <h1 class="headline">Your brain is a brilliant <em>liar</em>.</h1>
+      <div class="tagline">Therapist backed by science</div>
+      <p class="lede">Neuroscience-backed therapy that helps high performers break the patterns holding them back — and quit therapy for good.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="file:///Users/ryanewen/Downloads/index_44.html#contact">Get Started <span class="btn-arrow">→</span></a>
+      </div>
+    </div>
+    <div class="hero-media reveal in">
+      <svg class="synapse" viewBox="0 0 120 120" fill="none">
+        <circle cx="20" cy="24" r="4" fill="#7C4DD6"></circle><circle cx="96" cy="40" r="4" fill="#1F4E4A"></circle>
+        <circle cx="58" cy="92" r="4" fill="#7C4DD6"></circle><circle cx="84" cy="98" r="3" fill="#1F4E4A"></circle>
+        <path d="M20 24 L58 92 M96 40 L58 92 M58 92 L84 98 M20 24 L96 40" stroke="#191C28" stroke-width="1" opacity=".4"></path>
+      </svg>
+      <div class="frame">
+        <img src="./index_files/jay+rai+(4).png" alt="Jay Rai, neuroscience-backed therapist, smiling portrait">
+      </div>
+      <div class="badge">
+        <div class="k">King's College</div>
+        <div class="v">MSc Neuroscience &amp; Psychology of Mental Health</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOGO WALL ===== -->
+<section class="logos">
+  <div class="logos-inner reveal">
+    <p class="label">Organisations I've coached, trained &amp; spoken for</p>
+    <div class="logo-grid">
+      <img src="./index_files/1.+google-logo.png" alt="Google">
+      <img src="./index_files/2.+Amazon+logo.png" alt="Amazon">
+      <img src="./index_files/3.+Salesforce+Logo.png" alt="Salesforce">
+      <img src="./index_files/4.+credit_suisse_sp_rgb_100mm.jpg" alt="Credit Suisse">
+      <img src="./index_files/12.+600c7daf80244200047b0045.png" alt="Elsevier">
+      <img src="./index_files/11.+Trifecta+3M+003+LockupLg+RGB+Pos.jpg" alt="3M">
+      <img src="./index_files/8.+accenture-logo.png" alt="Accenture">
+      <img src="./index_files/6.+Top+left+stacked+IPT+and+BDO+logo.png" alt="BDO">
+      <img src="./index_files/13.+D&amp;G_Master_Logo_Primary_RGB_DigitalBlue.png" alt="Domestic &amp; General">
+      <img src="./index_files/10.+BMO.png" alt="BMO Bank of Montreal">
+      <img src="./index_files/7.+HAVAS_LOGO_2023.png" alt="Havas">
+      <img src="./index_files/5.+Simplyhealth+Logo.png" alt="Simplyhealth">
+      <img src="./index_files/17.+Rightmove_logo.png" alt="Rightmove">
+      <img src="./index_files/16.+Screenshot+2025-08-29+at+09.png" alt="Expedia Group">
+      <img src="./index_files/15.+Screenshot+2025-08-29+at+09.png" alt="Financial Conduct Authority">
+    </div>
+  </div>
+</section>
+
+<!-- ===== APPROACH ===== -->
+<section class="approach" id="approach">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <h2>Science you can feel.<br>Tools you can use tomorrow.</h2>
+      <p>I bring together three things that rarely sit in one room. Neuroscience explains why you do what you do. Therapy helps you face it. Mindfulness helps you hold it.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 0-4 4 4 4 0 0 0-2 7 3 3 0 0 0 2 5 3 3 0 0 0 4 1 3 3 0 0 0 4-1 3 3 0 0 0 2-5 4 4 0 0 0-2-7 4 4 0 0 0-4-4Z"></path><path d="M12 7v12"></path></svg></div>
+        <h3>Neuroscience</h3>
+        <p>The hard science of how your brain forms habits, fear and focus — so change is built on what actually drives behaviour, not guesswork.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.5 9 2.5 5 6 5c2 0 3.2 1.2 4 2.5C10.8 6.2 12 5 14 5c3.5 0 5.5 4 3.5 7.5C19 16.65 12 21 12 21Z"></path></svg></div>
+        <h3>Psychotherapy</h3>
+        <p>The depth of CBT and REBT to face what's really going on — practical, evidence-led work shaped at The Priory, the UK's leading trauma clinic.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div>
+        <h3>Mindfulness</h3>
+        <p>The stillness of Eastern mindfulness to hold it all together — turning insight into calm, steady change you can sustain under pressure.</p>
+      </div>
+    </div>
+    <p class="closer reveal">Good therapy shouldn't keep you coming back. It should give you the tools to <b>quit therapy for good.</b></p>
+    <div style="text-align:center;margin-top:34px;" class="reveal"><a class="btn btn-primary" href="file:///Users/ryanewen/Downloads/index_44.html#contact">Get Started <span class="btn-arrow">→</span></a></div>
+  </div>
+</section>
+
+<!-- ===== BOOK ===== -->
+<section class="book" id="book">
+  <div class="wrap book-grid">
+    <div class="book-cover reveal">
+      <img src="./index_files/Book.png" alt="Brain Tools for the Busy by Jay Rai — book cover">
+    </div>
+    <div class="book-info reveal">
+      <h2>Brain Tools for the Busy</h2>
+      <p class="formats">Published by Wiley</p>
+      <p style="color:var(--ink-soft);font-size:1.06rem;">Boost your mind, mood and focus with practical, science-backed tools designed for people who don't have time to waste.</p>
+      <blockquote class="quote">
+        A must-read for anyone eager to sharpen their skills and tackle life's challenges with confidence.
+        <cite>— Dr Brenda Williams, Reader in Neuroscience Education, King's College London</cite>
+      </blockquote>
+      <a class="btn btn-primary" href="https://www.amazon.co.uk/dp/1394218419" target="_blank" rel="noopener">Get the book <span class="btn-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testi">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <h2>Real results, not endless sessions</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="tcard reveal">
+        <span class="stars">★★★★★</span>
+        <p>"Sceptical at first, but Jay's approach delivers real results."</p>
+        <span class="who">Workshop attendee</span>
+      </div>
+      <div class="tcard reveal">
+        <span class="stars">★★★★★</span>
+        <p>"Jay's science-backed method helped me finally break unhelpful patterns."</p>
+        <span class="who">1-on-1 client</span>
+      </div>
+      <div class="tcard reveal">
+        <span class="stars">★★★★★</span>
+        <p>"No fluff — just clarity, focus, and real, measurable progress."</p>
+        <span class="who">Corporate keynote audience</span>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal"><a class="btn btn-primary" href="file:///Users/ryanewen/Downloads/index_44.html#contact">Get Started <span class="btn-arrow">→</span></a></div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <img src="./index_files/WMAD.jpg" alt="Jay Rai presenting at Women Making a Difference">
+      <img src="./index_files/Amazon+2.jpeg" alt="Jay Rai speaking at Amazon">
+      <img src="./index_files/3M.jpeg" alt="Jay Rai delivering a 3M keynote">
+    </div>
+    <div class="about-info reveal">
+      <h2 style="font-size:clamp(2rem,3.4vw,2.7rem);margin:0 0 16px;">Leading-edge therapy, grounded in real-world pressure</h2>
+      <p style="color:var(--ink-soft);font-size:1.05rem;">After a successful career in investment management, I understand the relentless demands busy professionals face — and the need for solutions that are fast and effective. Trained in neuroscience and psychology, with hands-on experience at The Priory, I give you practical tools to break unproductive cycles and move forward.</p>
+      <ul class="creds">
+        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg></span><span><b>MSc Neuroscience &amp; Psychology of Mental Health</b>, King's College London — specialism in Empowerment.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg></span><span><b>Qualified with honours in CBT / REBT therapy</b> at CCBT, Regent's University.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg></span><span><b>Forbes contributor</b> and member of the British Neuroscience Association.</span></li>
+      </ul>
+      <div style="margin-top:28px;"><a class="btn btn-ghost" href="file:///Users/ryanewen/Downloads/index_44.html#contact">Get Started <span class="btn-arrow">→</span></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES / PRICING ===== -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <h2>A short-term investment with lifelong benefits</h2>
+      <p>No endless cycles, no one-size-fits-all advice — just real progress. We'll start with a free 15-minute call to explore how I can support you.</p>
+    </div>
+    <div class="price-grid">
+      <div class="pcard reveal"><h4>1-on-1 sessions</h4><div class="amt">£150<small> / session</small></div><p>In-person across London or online worldwide.</p></div>
+      <div class="pcard reveal"><h4>Online sessions</h4><div class="amt">£150<small> / session</small></div><p>Via Teams, FaceTime or Zoom, anywhere in the world.</p></div>
+      <div class="pcard reveal"><h4>Corporate</h4><div class="amt">£195<small> / session</small></div><p>Focused support for leaders and busy professionals.</p></div>
+      <div class="pcard reveal"><h4>Couples therapy</h4><div class="amt">£195<small> / session</small></div><p>Strengthen communication and move forward together.</p></div>
+    </div>
+    <p class="loc-note reveal"><b>London locations:</b> City (Liverpool Street) · West End (Oxford Street) · South West (Battersea)</p>
+    <div style="margin-top:26px;" class="reveal"><a class="btn btn-primary" href="file:///Users/ryanewen/Downloads/index_44.html#contact">Get Started <span class="btn-arrow">→</span></a></div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA + NEWSLETTER ===== -->
+<section class="final" id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <h2>Ready to run your mind, instead of letting it run you?</h2>
+      <p class="sub">Let's start with a free 15-minute call. No pressure, no jargon — just a conversation about where you want to go next.</p>
+      <a class="btn btn-primary" href="mailto:jay@jayrai.com?subject=Get%20Started">Get Started <span class="btn-arrow">→</span></a>
+    </div>
+
+    <div class="news reveal">
+      <div>
+        <h3>Get mentally stronger</h3>
+        <p>Science-backed tips and tools, straight to your inbox. We respect your privacy.</p>
+      </div>
+      <form onsubmit="this.querySelector(&#39;.ok&#39;).style.display=&#39;block&#39;;return false;">
+        <input type="text" placeholder="First name" aria-label="First name" required="">
+        <input type="email" placeholder="Email address" aria-label="Email address" required="">
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Sign up</button>
+        <p class="ok" style="display:none;color:#A8D8D2;font-size:.85rem;width:100%;">Thank you — you're subscribed.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap foot-inner">
+    <div>
+      <div class="foot-logo">Jay<span>Rai</span></div>
+      <div class="foot-tag">Mental Strength &amp; Empowerment Expert · Therapist backed by science</div>
+      <div class="foot-social">
+        <a href="http://www.linkedin.com/in/jayrai" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-10h4v2"></path><rect x="2" y="9" width="4" height="11"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+        <a href="https://www.instagram.com/jayrai.empower" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="var(--ink-soft)" stroke="none"></circle></svg></a>
+        <a href="https://www.youtube.com/@jayrai.empower" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22 8a3 3 0 0 0-2-2c-2-.5-8-.5-8-.5s-6 0-8 .5a3 3 0 0 0-2 2 31 31 0 0 0 0 8 3 3 0 0 0 2 2c2 .5 8 .5 8 .5s6 0 8-.5a3 3 0 0 0 2-2 31 31 0 0 0 0-8Z"></path><path d="m10 15 5-3-5-3Z" fill="var(--ink-soft)" stroke="none"></path></svg></a>
+      </div>
+    </div>
+    <nav class="foot-links">
+      <a href="file:///Users/ryanewen/Downloads/index_44.html#approach">How I help</a>
+      <a href="file:///Users/ryanewen/Downloads/index_44.html#book">The book</a>
+      <a href="file:///Users/ryanewen/Downloads/index_44.html#about">About</a>
+      <a href="file:///Users/ryanewen/Downloads/index_44.html#services">Therapy</a>
+      <a href="file:///Users/ryanewen/Downloads/index_44.html#contact">Contact</a>
+    </nav>
+  </div>
+  <p class="copyright">© 2026 Jay Rai. All rights reserved.</p>
+</footer>
+
+<script>
+  // Nav scroll state
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10));
+
+  // Mobile menu
+  const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+  function setMenu(open){
+    links.classList.toggle('open',open);
+    nav.classList.toggle('menu-open',open);
+    document.body.style.overflow=open?'hidden':'';
+  }
+  burger.addEventListener('click',()=>setMenu(!links.classList.contains('open')));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+
+  // Scroll reveal
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+
+</body></html>
