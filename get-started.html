@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!-- saved from url=(0056)file:///Users/ryanewen/Downloads/jay-enquiry-form_1.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -9,9 +10,9 @@
 <link href="./get-started_files/css2" rel="stylesheet">
 <style>
   :root{
-    --purple:#7C4DD6;
-    --purple-deep:#5E33B5;
-    --lilac:#E4D7FF;
+    --purple:#28607E;
+    --purple-deep:#1E4F66;
+    --lilac:#BCE0EA;
     --white:#ffffff;
     --line:rgba(255,255,255,.34);
     --line-soft:rgba(255,255,255,.16);
@@ -22,14 +23,15 @@
   html,body{height:100%}
   body{
     background:var(--purple);
-    background:linear-gradient(178deg,#7C4DD6 0%,#6E40CE 100%);
+    background:linear-gradient(178deg,#28607E 0%,#22566F 100%);
     color:#fff;
     font-family:"Inter",system-ui,sans-serif;
     -webkit-font-smoothing:antialiased;
     line-height:1.5;
     overflow:hidden;
   }
-  #app{height:100dvh;display:flex;flex-direction:column}
+  #app{height:100dvh;display:flex;flex-direction:column;position:relative;z-index:1}
+  #neuroForm{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 
   .topbar{position:fixed;top:0;left:0;right:0;z-index:20;padding:20px 26px 0}
   .track{height:2px;background:rgba(255,255,255,.22);border-radius:99px;max-width:var(--maxw);margin:0 auto;overflow:hidden}
@@ -127,6 +129,7 @@
 </style>
 </head>
 <body>
+<canvas id="neuroForm" aria-hidden="true"></canvas>
 <div id="app">
   <div class="topbar" id="topbar" style="">
     <div class="track"><div class="fill" id="fill" style="width: 16.6667%;"></div></div>
@@ -440,6 +443,68 @@ function score(){
 function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 
 render();
+
+/* ---------------- Neural field background ---------------- */
+class NeuroField{
+  constructor(canvas,opts={}){
+    this.c=canvas;this.ctx=canvas.getContext('2d');
+    this.nodes=[];this.pulses=[];this.raf=null;this.pt=0;this.built=false;this.dirty=false;
+    this.la=opts.lineAlpha??.16;this.na=opts.nodeAlpha??.55;this.dens=opts.density??15000;
+    this.reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+    addEventListener('resize',()=>{this.dirty=true;if(this.raf)this.size();});
+  }
+  size(){
+    const w=innerWidth,h=innerHeight;this.w=w;this.h=h;
+    const dpr=Math.min(devicePixelRatio||1,2);
+    this.c.width=w*dpr;this.c.height=h*dpr;this.ctx.setTransform(dpr,0,0,dpr,0,0);
+    this.build();this.built=true;this.dirty=false;
+  }
+  build(){
+    const count=Math.round(Math.min(40,Math.max(18,this.w*this.h/this.dens)));
+    this.nodes=[];
+    for(let i=0;i<count;i++)this.nodes.push({x:Math.random()*this.w,y:Math.random()*this.h,vx:(Math.random()-.5)*.32,vy:(Math.random()-.5)*.32,r:Math.random()<.18?3.1:1.7+Math.random()});
+  }
+  start(){
+    if(!this.built||this.dirty)this.size();
+    if(this.reduced){this.draw();return;}
+    if(this.raf)return;
+    const loop=()=>{this.step();this.draw();this.raf=requestAnimationFrame(loop);};
+    this.raf=requestAnimationFrame(loop);
+  }
+  stop(){cancelAnimationFrame(this.raf);this.raf=null;}
+  step(){
+    for(const p of this.nodes){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>this.w)p.vx*=-1;if(p.y<0||p.y>this.h)p.vy*=-1;
+      p.x=Math.max(0,Math.min(this.w,p.x));p.y=Math.max(0,Math.min(this.h,p.y));
+    }
+    if(--this.pt<=0){
+      this.pt=38+Math.random()*55;
+      const a=this.nodes[Math.floor(Math.random()*this.nodes.length)];
+      let b=null,bd=140*140;
+      for(const o of this.nodes){if(o===a)continue;const d=(o.x-a.x)**2+(o.y-a.y)**2;if(d<bd){bd=d;b=o;}}
+      if(b)this.pulses.push({a,b,t:0,sp:.011+Math.random()*.01});
+    }
+    for(const pl of this.pulses)pl.t+=pl.sp;
+    this.pulses=this.pulses.filter(pl=>pl.t<1);
+  }
+  draw(){
+    const ctx=this.ctx,n=this.nodes,TH=134;ctx.clearRect(0,0,this.w,this.h);
+    for(let i=0;i<n.length;i++)for(let j=i+1;j<n.length;j++){
+      const dx=n[i].x-n[j].x,dy=n[i].y-n[j].y,d=Math.hypot(dx,dy);
+      if(d<TH){ctx.strokeStyle=`rgba(255,255,255,${(1-d/TH)*this.la})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(n[i].x,n[i].y);ctx.lineTo(n[j].x,n[j].y);ctx.stroke();}
+    }
+    for(const p of n){ctx.fillStyle=`rgba(255,255,255,${this.na})`;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill();}
+    for(const pl of this.pulses){
+      const x=pl.a.x+(pl.b.x-pl.a.x)*pl.t,y=pl.a.y+(pl.b.y-pl.a.y)*pl.t,g=Math.sin(pl.t*Math.PI);
+      ctx.fillStyle=`rgba(255,255,255,${.9*g})`;ctx.shadowColor='rgba(255,255,255,.85)';ctx.shadowBlur=9;
+      ctx.beginPath();ctx.arc(x,y,2.5,0,7);ctx.fill();ctx.shadowBlur=0;
+    }
+  }
+}
+const fNeuro=new NeuroField(document.getElementById('neuroForm'),{lineAlpha:.11,nodeAlpha:.4,density:18000});
+fNeuro.start();
+document.addEventListener('visibilitychange',()=>{document.hidden?fNeuro.stop():fNeuro.start();});
 </script>
 
 
