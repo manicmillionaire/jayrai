@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)file:///Users/ryanewen/Downloads/jay-enquiry-form_1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work With Jay — Application</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="./get-started_files/css2" rel="stylesheet">
+<style>
+  :root{
+    --purple:#7C4DD6;
+    --purple-deep:#5E33B5;
+    --lilac:#E4D7FF;
+    --white:#ffffff;
+    --line:rgba(255,255,255,.34);
+    --line-soft:rgba(255,255,255,.16);
+    --radius:16px;
+    --maxw:640px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--purple);
+    background:linear-gradient(178deg,#7C4DD6 0%,#6E40CE 100%);
+    color:#fff;
+    font-family:"Inter",system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    overflow:hidden;
+  }
+  #app{height:100dvh;display:flex;flex-direction:column}
+
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:20;padding:20px 26px 0}
+  .track{height:2px;background:rgba(255,255,255,.22);border-radius:99px;max-width:var(--maxw);margin:0 auto;overflow:hidden}
+  .fill{height:100%;width:0;background:#fff;border-radius:99px;transition:width .55s cubic-bezier(.22,1,.36,1)}
+  @media (prefers-reduced-motion:reduce){.fill{transition:none}}
+
+  /* stage */
+  .stage{flex:1;display:flex;align-items:center;justify-content:center;padding:64px 26px 56px;overflow-y:auto}
+  .card{width:100%;max-width:var(--maxw)}
+  h1.q{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:clamp(30px,5.4vw,46px);line-height:1.1;letter-spacing:-.015em;margin-bottom:16px}
+  h1.q em{font-style:italic;color:var(--lilac)}
+  .help{color:rgba(255,255,255,.74);font-size:16px;max-width:52ch;margin-bottom:34px}
+  .help .ex{color:#fff;opacity:.92}
+
+  /* options */
+  .opts{display:flex;flex-direction:column;gap:11px}
+  .opt{
+    display:flex;align-items:center;gap:15px;width:100%;text-align:left;cursor:pointer;
+    background:transparent;border:1.5px solid var(--line);border-radius:var(--radius);
+    padding:17px 19px;font-size:16.5px;color:#fff;font-family:inherit;
+    transition:background .18s ease,border-color .18s ease,color .18s ease,transform .12s ease;
+  }
+  .opt:hover{background:rgba(255,255,255,.08);border-color:#fff}
+  .opt:active{transform:scale(.992)}
+  .opt[aria-pressed="true"]{background:#fff;border-color:#fff;color:var(--purple-deep)}
+  .opt .lbl{flex:1}
+
+  /* text inputs */
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:13px;font-weight:600;letter-spacing:.01em;color:#fff;margin-bottom:8px}
+  .field label .opt-tag{color:rgba(255,255,255,.6);font-weight:400}
+  input[type=text],input[type=email],input[type=tel],textarea{
+    width:100%;font-family:inherit;font-size:16.5px;color:#fff;caret-color:#fff;
+    background:rgba(255,255,255,.07);border:1.5px solid var(--line);border-radius:var(--radius);
+    padding:16px 17px;outline:none;transition:border-color .18s ease,box-shadow .18s ease,background .18s ease;
+  }
+  textarea{resize:vertical;min-height:140px;line-height:1.55}
+  input:focus,textarea:focus{border-color:#fff;background:rgba(255,255,255,.1);box-shadow:0 0 0 4px rgba(255,255,255,.12)}
+  ::placeholder{color:rgba(255,255,255,.55);opacity:1}
+
+  /* scale */
+  .scale{display:flex;gap:9px;flex-wrap:wrap}
+  .scale button{
+    flex:1;min-width:48px;aspect-ratio:1;border:1.5px solid var(--line);background:transparent;
+    border-radius:13px;font-family:"Fraunces",serif;font-size:18px;font-weight:500;color:#fff;cursor:pointer;
+    transition:all .16s ease;
+  }
+  .scale button:hover{background:rgba(255,255,255,.08);border-color:#fff}
+  .scale button[aria-pressed="true"]{background:#fff;border-color:#fff;color:var(--purple-deep)}
+  .scalelabels{display:flex;justify-content:space-between;margin-top:11px;font-size:12.5px;color:rgba(255,255,255,.66)}
+
+  /* inline nav (text links under the question) */
+  .nav{display:flex;align-items:center;gap:20px;margin-top:28px}
+  .lnk{background:none;border:none;font-family:inherit;font-size:14.5px;color:rgba(255,255,255,.7);cursor:pointer;padding:6px 0;transition:color .18s ease}
+  .lnk:hover{color:#fff}
+  .lnk-fwd{margin-left:auto;font-weight:600;color:#fff;display:inline-flex;align-items:center;gap:8px}
+  .lnk-fwd .arr{transition:transform .25s ease}
+  .lnk-fwd:hover .arr{transform:translateX(4px)}
+  .lnk:disabled{opacity:.55;cursor:not-allowed}
+  .btn{
+    font-family:inherit;font-size:15px;font-weight:600;letter-spacing:.01em;cursor:pointer;border:1.5px solid transparent;
+    border-radius:50px;padding:15px 30px;transition:background .2s ease,box-shadow .25s ease,transform .2s ease,opacity .2s ease,color .2s ease;
+  }
+  .btn-primary{background:#fff;color:var(--purple-deep);display:inline-flex;align-items:center;gap:9px;box-shadow:0 14px 30px -14px rgba(0,0,0,.45)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 38px -16px rgba(0,0,0,.55)}
+  .btn-primary:active{transform:translateY(0)}
+  .btn-primary:disabled{opacity:.55;cursor:not-allowed;transform:none}
+  .btn-ghost{background:transparent;color:rgba(255,255,255,.78);border-color:transparent}
+  .btn-ghost:hover{color:#fff}
+  .btn .arr{font-size:17px;line-height:1;transition:transform .25s ease}
+  .btn-primary:hover .arr{transform:translateX(4px)}
+
+  /* welcome + end */
+  .center-narr{max-width:580px}
+  h1.big{font-family:"Fraunces",serif;font-weight:500;font-size:clamp(40px,7.4vw,62px);line-height:1.03;letter-spacing:-.02em;margin-bottom:22px}
+  h1.big em{font-style:italic;color:var(--lilac)}
+  .lead{font-size:18px;color:rgba(255,255,255,.82);max-width:44ch;margin-bottom:36px;line-height:1.55}
+  .start-btn{font-size:16px;padding:18px 36px}
+  .trust{margin-top:26px;font-size:13px;color:rgba(255,255,255,.6)}
+
+  .end-mark{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.15);display:grid;place-items:center;margin-bottom:26px}
+  .end-mark svg{width:28px;height:28px;stroke:#fff}
+  .pretitle{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:18px}
+  .cal-embed{margin-top:20px;border-radius:var(--radius);overflow:hidden;background:#fff;box-shadow:0 24px 60px -28px rgba(0,0,0,.5)}
+
+  .err{color:#FFE0D8;font-size:13.5px;margin-top:8px;min-height:1px}
+  .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0}
+
+  .anim-in{animation:slideIn .44s cubic-bezier(.22,1,.36,1)}
+  @keyframes slideIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.anim-in{animation:none}}
+
+  .spinner{width:15px;height:15px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;display:inline-block;vertical-align:-2px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="topbar" id="topbar" style="">
+    <div class="track"><div class="fill" id="fill" style="width: 16.6667%;"></div></div>
+  </div>
+
+  <main class="stage"><div class="card anim-in" id="card"><h1 class="q">What are you hoping to achieve?</h1><p class="help"><span class="ex">For example: confidence, leadership, business growth, better relationships, mental resilience, team performance.</span></p><textarea id="inp" placeholder="Tell me what you&#39;re working towards…"></textarea><div class="nav"><button class="lnk" id="backLnk">← Back</button><button class="lnk lnk-fwd" id="fwdLnk">Continue <span class="arr">→</span></button></div></div></main>
+</div>
+
+<script>
+/* ============================================================
+   CONFIG — this is the ONLY block you change to wire up sending.
+   ------------------------------------------------------------
+   EMAIL RELAY (recommended to launch):
+     1. Get a free access key at https://web3forms.com (no account needed,
+        just enter the email you want enquiries sent to).
+     2. Paste it below. Done — every enquiry emails that address.
+
+   OWN BACKEND / DASHBOARD:
+     Set RELAY = "custom" and put your endpoint URL in CUSTOM_ENDPOINT.
+     The full enquiry object is POSTed as JSON.
+
+   Leave as-is to run in DEMO mode (shows the success screen, sends nothing).
+   ============================================================ */
+const CONFIG = {
+  RELAY: "web3forms",                  // "web3forms" | "custom" | "demo"
+  WEB3FORMS_KEY: "",                   // paste your Web3Forms access key
+  CUSTOM_ENDPOINT: "",                 // your serverless URL if RELAY="custom"
+  CALENDLY_URL: "https://calendly.com/your-link/discovery-call", // <-- set this
+  NOTIFY_SUBJECT: "New enquiry — Work With Jay"
+};
+
+/* ---------------- Question flow ---------------- */
+const INTEREST = ["1-to-1 Coaching","Group Coaching","Corporate Speaking","Workshops & Training","Business Mentoring","Personal Development","Performance & Mindset Coaching","Not Sure Yet"];
+
+const STEPS = [
+  { type:"welcome" },
+
+  { id:"interest", type:"single", q:"What are you interested in?",
+    help:"Pick the option closest to what you need — it tailors the next few questions.",
+    options:INTEREST },
+
+  { id:"describes", type:"single", q:"What best describes you?",
+    options:["Individual","Entrepreneur","Business Owner","Executive / Director","Team Manager","HR / People Team","Event Organiser","Other"] },
+
+  { id:"achieve", type:"long", q:"What are you hoping to achieve?",
+    help:`<span class="ex">For example: confidence, leadership, business growth, better relationships, mental resilience, team performance.</span>`,
+    placeholder:"Tell me what you're working towards…", optional:true },
+
+  /* --- 1-to-1 coaching branch --- */
+  { id:"why_now", type:"single", q:"Why are you considering coaching now?",
+    when:a=>a.interest==="1-to-1 Coaching",
+    options:["Major life change","Career progression","Business challenge","Confidence issues","Accountability","Personal growth","Other"] },
+  { id:"coached_before", type:"single", q:"Have you worked with a coach before?",
+    when:a=>a.interest==="1-to-1 Coaching", options:["Yes","No"] },
+  { id:"what_worked", type:"long", q:"What worked, and what didn't?",
+    when:a=>a.interest==="1-to-1 Coaching" && a.coached_before==="Yes",
+    placeholder:"Be honest — it helps me pitch this right.", optional:true },
+  { id:"commitment", type:"scale", q:"How committed are you to making changes?",
+    when:a=>a.interest==="1-to-1 Coaching", low:"Just curious", high:"All in" },
+  { id:"invest", type:"single", q:"How much are you prepared to invest?",
+    when:a=>a.interest==="1-to-1 Coaching",
+    options:["Under £250/month","£250–£500/month","£500–£1,000/month","£1,000–£2,500/month","£2,500+/month"] },
+  { id:"duration", type:"single", q:"How long do you think you'll need support?",
+    when:a=>a.interest==="1-to-1 Coaching",
+    options:["One-off session","1 month","3 months","6 months","12 months+","Not sure"] },
+
+  /* --- Group coaching branch --- */
+  { id:"group_size", type:"single", q:"How many people?",
+    when:a=>a.interest==="Group Coaching", options:["Just me","2–5","6–10","11–25","25+"] },
+  { id:"group_format", type:"single", q:"Preferred format?",
+    when:a=>a.interest==="Group Coaching", options:["Online","In person","Hybrid"] },
+  { id:"group_budget", type:"single", q:"What's your budget?",
+    when:a=>a.interest==="Group Coaching", options:["Under £500","£500–£1,000","£1,000–£2,500","£2,500+"] },
+
+  /* --- Corporate speaking branch --- */
+  { id:"event_type", type:"single", q:"What type of event?",
+    when:a=>a.interest==="Corporate Speaking",
+    options:["Conference","Internal team event","Leadership event","Sales kick-off","Workshop","Other"] },
+  { id:"audience", type:"single", q:"Audience size?",
+    when:a=>a.interest==="Corporate Speaking", options:["Under 25","25–50","50–100","100–500","500+"] },
+  { id:"location", type:"short", q:"Where is the event?",
+    when:a=>a.interest==="Corporate Speaking", placeholder:"City, country, or 'virtual'", optional:true },
+  { id:"cadence", type:"single", q:"One-off or ongoing?",
+    when:a=>a.interest==="Corporate Speaking", options:["One-off","Quarterly","Monthly","Ongoing programme"] },
+  { id:"speak_budget", type:"single", q:"Speaking budget?",
+    when:a=>a.interest==="Corporate Speaking",
+    options:["Under £1,000","£1,000–£2,500","£2,500–£5,000","£5,000–£10,000","£10,000+"] },
+
+  /* --- Everyone --- */
+  { id:"start_when", type:"single", q:"If accepted, when would you like to start?",
+    options:["ASAP","Within 30 days","Within 3 months","Just exploring"] },
+  { id:"mindset", type:"single", q:"Which best describes your mindset right now?",
+    options:["Just gathering information","Interested but undecided","Ready to invest","Ready to start immediately"] },
+  { id:"success", type:"long", q:"What would success look like in 12 months?",
+    help:"Picture it clearly. This is the part that matters most.",
+    placeholder:"In a year from now, what's changed?", optional:true },
+
+  { id:"contact", type:"contact", q:"Last thing — where can Jay reach you?" },
+
+  { type:"end" }
+];
+
+/* ---------------- Engine ---------------- */
+const answers = {};
+let pos = 0; // index into STEPS
+
+const card = document.getElementById('card');
+const fill = document.getElementById('fill');
+const topbar = document.getElementById('topbar');
+
+const visible = () => STEPS.filter(s => !s.when || s.when(answers));
+function progressIdx(){
+  const vis = visible().filter(s=>s.type!=="welcome"&&s.type!=="end");
+  const cur = STEPS[pos];
+  const i = vis.indexOf(cur);
+  return { i, total: vis.length };
+}
+
+function render(){
+  const s = STEPS[pos];
+  card.className='card anim-in';
+
+  if(s.type==="welcome"){ renderWelcome(s); return; }
+  if(s.type==="end"){ renderEnd(); return; }
+
+  topbar.style.display="";
+  const {i,total}=progressIdx();
+  fill.style.width = (i/(total))*100 + "%";
+
+  let html = `<h1 class="q">${s.q}</h1>`;
+  html += s.help ? `<p class="help">${s.help}</p>` : ``;
+
+  if(s.type==="single"){
+    html += `<div class="opts">` + s.options.map(o=>{
+      const sel = answers[s.id]===o ? 'aria-pressed="true"':'aria-pressed="false"';
+      return `<button class="opt" data-val="${esc(o)}" ${sel}><span class="lbl">${o}</span></button>`;
+    }).join('') + `</div>`;
+  }
+  else if(s.type==="long"||s.type==="short"){
+    const v = answers[s.id]||'';
+    html += s.type==="long"
+      ? `<textarea id="inp" placeholder="${esc(s.placeholder||'')}">${esc(v)}</textarea>`
+      : `<input id="inp" type="text" placeholder="${esc(s.placeholder||'')}" value="${esc(v)}" />`;
+  }
+  else if(s.type==="scale"){
+    let row=`<div class="scale">`;
+    for(let n=1;n<=10;n++){ const sel=answers[s.id]==n?'aria-pressed="true"':''; row+=`<button data-val="${n}" ${sel}>${n}</button>`; }
+    row+=`</div><div class="scalelabels"><span>1 · ${s.low}</span><span>${s.high} · 10</span></div>`;
+    html+=row;
+  }
+  else if(s.type==="contact"){
+    html += `
+      <div class="field"><label>Name</label><input id="c_name" type="text" value="${esc(answers.name||'')}" placeholder="Your full name" /></div>
+      <div class="field"><label>Email</label><input id="c_email" type="email" value="${esc(answers.email||'')}" placeholder="you@email.com" /></div>
+      <div class="field"><label>Mobile</label><input id="c_mobile" type="tel" value="${esc(answers.mobile||'')}" placeholder="+44…" /></div>
+      <div class="field"><label>LinkedIn / Website <span class="opt-tag">(optional)</span></label><input id="c_link" type="text" value="${esc(answers.link||'')}" placeholder="linkedin.com/in/…" /></div>
+      <input class="hp" id="hp" tabindex="-1" autocomplete="off" placeholder="leave blank" />
+      <div class="err" id="err"></div>`;
+  }
+
+  // inline nav: back link always (after the first question); a forward link only where there's no auto-advance
+  const needsFwd = s.type==="long"||s.type==="short"||s.type==="contact";
+  const backLink = pos>1 ? `<button class="lnk" id="backLnk">← Back</button>` : ``;
+  const fwdLink = needsFwd ? `<button class="lnk lnk-fwd" id="fwdLnk">${s.type==="contact"?"Send enquiry":"Continue"} <span class="arr">→</span></button>` : ``;
+  html += `<div class="nav">${backLink}${fwdLink}</div>`;
+
+  card.innerHTML = html;
+  wire(s);
+  const inp = card.querySelector('#inp'); if(inp) inp.focus();
+}
+
+function wire(s){
+  if(s.type==="single"){
+    card.querySelectorAll('.opt').forEach(b=>{
+      b.onclick=()=>{ answers[s.id]=b.dataset.val; card.querySelectorAll('.opt').forEach(x=>x.setAttribute('aria-pressed','false')); b.setAttribute('aria-pressed','true'); setTimeout(go,160); };
+    });
+  }
+  if(s.type==="scale"){
+    card.querySelectorAll('.scale button').forEach(b=>{
+      b.onclick=()=>{ answers[s.id]=+b.dataset.val; card.querySelectorAll('.scale button').forEach(x=>x.setAttribute('aria-pressed','false')); b.setAttribute('aria-pressed','true'); setTimeout(go,160); };
+    });
+  }
+  const bl=card.querySelector('#backLnk'); if(bl) bl.onclick=back;
+  const fl=card.querySelector('#fwdLnk'); if(fl) fl.onclick=go;
+}
+
+function collect(){
+  const s=STEPS[pos];
+  if(s.type==="long"||s.type==="short"){ const v=card.querySelector('#inp').value.trim(); answers[s.id]=v; }
+  if(s.type==="contact"){
+    answers.name=val('c_name'); answers.email=val('c_email'); answers.mobile=val('c_mobile'); answers.link=val('c_link');
+    answers._hp=val('hp');
+  }
+}
+const val=id=>{const e=card.querySelector('#'+id);return e?e.value.trim():'';};
+
+function validate(){
+  const s=STEPS[pos];
+  if(s.type==="single"||s.type==="scale"){ if(answers[s.id]==null){ return false; } }
+  if((s.type==="long"||s.type==="short")&&!s.optional){ if(!card.querySelector('#inp').value.trim()) return false; }
+  if(s.type==="contact"){
+    const err=card.querySelector('#err');
+    if(!val('c_name')){ err.textContent="Please add a name."; return false; }
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(val('c_email'))){ err.textContent="That email doesn't look right."; return false; }
+    err.textContent="";
+  }
+  return true;
+}
+
+function go(){
+  collect();
+  if(!validate()) return;
+  const s=STEPS[pos];
+  if(s.type==="contact"){ submitEnquiry(); return; }
+  // advance to next visible
+  let n=pos+1;
+  while(n<STEPS.length && STEPS[n].when && !STEPS[n].when(answers)) n++;
+  pos=n; render();
+}
+function back(){
+  let p=pos-1;
+  while(p>0 && STEPS[p].when && !STEPS[p].when(answers)) p--;
+  pos=Math.max(0,p); render();
+}
+
+document.addEventListener('keydown',e=>{
+  const s=STEPS[pos];
+  if(e.key==="Enter" && !(e.target.tagName==="TEXTAREA" && !e.metaKey && !e.ctrlKey)){
+    e.preventDefault();
+    if(s.type==="welcome"){ start(); }
+    else if(s.type!=="end"){ go(); }
+  }
+});
+
+/* ---------------- Welcome / End ---------------- */
+function renderWelcome(){
+  topbar.style.display="none";
+  card.innerHTML = `<div class="center-narr">
+    <h1 class="big">Let's find the <em>right</em> path for you.</h1>
+    <p class="lead">A few quick questions so we can recommend the best way to work with Jay. Two minutes, no jargon.</p>
+    <button class="btn btn-primary start-btn" id="startBtn">Get started <span class="arr">→</span></button>
+    <div class="trust">Trusted by leaders at Google, Amazon &amp; Salesforce</div>
+  </div>`;
+  card.querySelector('#startBtn').onclick=start;
+}
+function start(){ pos=1; render(); }
+
+function renderEnd(){
+  topbar.style.display="none";
+  const cal = CONFIG.CALENDLY_URL && !CONFIG.CALENDLY_URL.includes("your-link");
+  card.innerHTML = `<div class="center-narr">
+    <div class="end-mark"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+    <div class="pretitle">Thank you, ${esc((answers.name||'').split(' ')[0]||'')}</div>
+    <h1 class="big">That's the <em>hard</em> part done.</h1>
+    <p class="lead">Based on your answers, the next step is a free 15-minute call with Jay. Pick a time that works for you.</p>
+    <button class="btn btn-primary start-btn" id="bookBtn">Book your call <span class="arr">→</span></button>
+    ${cal?`<div class="cal-embed"><iframe src="${CONFIG.CALENDLY_URL}" width="100%" height="640" frameborder="0" title="Book a call"></iframe></div>`:``}
+  </div>`;
+  const b=card.querySelector('#bookBtn');
+  b.onclick=()=>{ if(cal){ document.querySelector('.cal-embed').scrollIntoView({behavior:'smooth'}); } else { alert('Set your Calendly link in CONFIG.CALENDLY_URL'); } };
+}
+
+/* ---------------- Submit ---------------- */
+async function submitEnquiry(){
+  if(answers._hp){ return; } // honeypot tripped — silently drop
+  const fwd=card.querySelector('#fwdLnk');
+  if(fwd){ fwd.disabled=true; fwd.innerHTML=`<span class="spinner"></span> Sending…`; }
+  const payload = buildPayload();
+  try{
+    if(CONFIG.RELAY==="web3forms" && CONFIG.WEB3FORMS_KEY){
+      await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},
+        body:JSON.stringify({access_key:CONFIG.WEB3FORMS_KEY,subject:CONFIG.NOTIFY_SUBJECT,from_name:answers.name||"Website enquiry",...payload})});
+    } else if(CONFIG.RELAY==="custom" && CONFIG.CUSTOM_ENDPOINT){
+      await fetch(CONFIG.CUSTOM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+    } else {
+      console.log("DEMO mode — enquiry payload:",payload);
+      await new Promise(r=>setTimeout(r,600));
+    }
+    pos=STEPS.length-1; render();
+  }catch(err){
+    if(fwd){ fwd.disabled=false; fwd.innerHTML=`Try again <span class="arr">→</span>`; }
+    const e=card.querySelector('#err'); if(e) e.textContent="Something went wrong sending that. Please try again.";
+  }
+}
+
+function buildPayload(){
+  const labels={interest:"Interested in",describes:"Describes them",achieve:"Hoping to achieve",
+    why_now:"Why coaching now",coached_before:"Coached before",what_worked:"What worked / didn't",
+    commitment:"Commitment (1–10)",invest:"Prepared to invest",duration:"Support duration",
+    group_size:"Group size",group_format:"Format",group_budget:"Group budget",
+    event_type:"Event type",audience:"Audience size",location:"Event location",cadence:"Cadence",speak_budget:"Speaking budget",
+    start_when:"Wants to start",mindset:"Mindset",success:"Success in 12 months",
+    name:"Name",email:"Email",mobile:"Mobile",link:"LinkedIn / Website"};
+  const out={};
+  Object.keys(labels).forEach(k=>{ if(answers[k]!=null&&answers[k]!=="") out[labels[k]]=answers[k]; });
+  out["Lead score"]=score();
+  out["Submitted"]=new Date().toISOString();
+  return out;
+}
+// simple weighted lead score for fast triage (0–100)
+function score(){
+  let s=0;
+  s+=({"Ready to start immediately":40,"Ready to invest":30,"Interested but undecided":12,"Just gathering information":3})[answers.mindset]||0;
+  s+=({"ASAP":25,"Within 30 days":18,"Within 3 months":8,"Just exploring":2})[answers.start_when]||0;
+  s+=({"£2,500+/month":25,"£1,000–£2,500/month":20,"£500–£1,000/month":14,"£250–£500/month":8,"Under £250/month":3})[answers.invest]||0;
+  s+=({"£10,000+":25,"£5,000–£10,000":22,"£2,500–£5,000":16,"£1,000–£2,500":10,"Under £1,000":4})[answers.speak_budget]||0;
+  if(answers.commitment) s+=Math.round(answers.commitment*1.0);
+  return Math.min(100,s);
+}
+
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+render();
+</script>
+
+
+</body></html>
