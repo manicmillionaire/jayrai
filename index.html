@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jay Rai | Therapist Backed by Science</title>
-<meta name="description" content="Neuroscience-backed therapy that helps high performers break the patterns holding them back — and quit therapy for good. Therapist backed by science.">
+<title>Jay Rai | Neuroscience-Based Therapist & Author, Brain Tools for the Busy</title>
+<meta name="description" content="Neuroscience-based therapy that helps high performers break the patterns holding them back — and quit therapy for good. Author of Brain Tools for the Busy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -15,9 +15,9 @@
     --paper-2:#F2ECE2;
     --ink:#191C28;
     --ink-soft:#4A4E5C;
-    --coral:#7C4DD6;
-    --coral-deep:#5E33B5;
-    --teal:#1F4E4A;
+    --coral:#28607E;
+    --coral-deep:#1E4F66;
+    --teal:#1C4A5E;
     --line:#E2D9CC;
     --shadow:0 22px 60px -28px rgba(25,28,40,.34);
     --maxw:1140px;
@@ -50,8 +50,8 @@
     padding:15px 26px;border-radius:50px;border:1px solid transparent;
     cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
   }
-  .btn-primary{background:var(--coral);color:#fff;box-shadow:0 12px 28px -12px rgba(124,77,214,.7)}
-  .btn-primary:hover{transform:translateY(-2px);background:var(--coral-deep);box-shadow:0 18px 34px -12px rgba(124,77,214,.8)}
+  .btn-primary{background:var(--coral);color:#fff;box-shadow:0 12px 28px -12px rgba(40,96,126,.7)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--coral-deep);box-shadow:0 18px 34px -12px rgba(40,96,126,.8)}
   .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
   .btn-ghost:hover{background:#fff;transform:translateY(-2px)}
   .btn-arrow{transition:transform .25s ease}
@@ -125,16 +125,17 @@
 
   /* ---------- How I help (3 disciplines) ---------- */
   .approach{background:var(--ink);color:var(--paper)}
-  .approach .eyebrow{color:#D9C7F5}
+  .approach .eyebrow{color:#A9CBDA}
   .approach .eyebrow::before{background:var(--coral)}
   .approach h2{color:var(--paper)}
+  .approach .sec-head{max-width:none}
   .approach .sec-head p{color:#B9BCC8}
   .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
   .pillar{
     background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
     border-radius:20px;padding:32px 26px;transition:transform .3s ease,border-color .3s ease;
   }
-  .pillar:hover{transform:translateY(-6px);border-color:rgba(124,77,214,.6)}
+  .pillar:hover{transform:translateY(-6px);border-color:rgba(40,96,126,.6)}
   .pillar .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--coral);margin-bottom:18px}
   .pillar .ic svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.7}
   .pillar h3{font-size:1.34rem;color:var(--paper);margin-bottom:8px}
@@ -148,11 +149,12 @@
   /* ---------- Book ---------- */
   .book-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
   .book-cover{position:relative}
-  .book-cover img{border-radius:8px;box-shadow:0 30px 60px -24px rgba(25,28,40,.5);transform:rotate(-3deg);transition:transform .4s ease}
-  .book-cover:hover img{transform:rotate(0)}
+  .book-cover img{border-radius:8px;box-shadow:0 30px 60px -24px rgba(25,28,40,.5);transition:transform .4s ease}
+  .book-cover:hover img{transform:translateY(-5px)}
   .book-cover .pub{position:absolute;top:-14px;right:6px;background:var(--teal);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:7px 13px;border-radius:30px}
   .book-info h2{font-size:clamp(2rem,3.4vw,2.7rem);margin:14px 0 6px}
-  .book-info .formats{font-size:.9rem;color:var(--ink-soft);font-weight:500;margin-bottom:22px}
+  .book-info .formats{font-size:.9rem;color:var(--ink-soft);font-weight:500;margin-bottom:14px}
+  .award{display:inline-flex;align-items:center;background:rgba(40,96,126,.1);color:var(--coral-deep);border:1px solid rgba(40,96,126,.22);border-radius:30px;padding:7px 15px;font-size:.82rem;font-weight:600;margin-bottom:22px}
   .quote{
     border-left:3px solid var(--coral);padding:6px 0 6px 22px;margin:24px 0 28px;
     font-family:'Fraunces',serif;font-style:italic;font-size:1.16rem;color:var(--ink);line-height:1.45;
@@ -181,7 +183,9 @@
   .creds .tick svg{width:13px;height:13px;stroke:#fff;stroke-width:2.4;fill:none}
 
   /* ---------- Services / pricing ---------- */
-  .services{background:var(--teal);color:#fff}
+  .services{background:var(--teal);color:#fff;position:relative;overflow:hidden}
+  .services .wrap{position:relative;z-index:1}
+  .sec-neuro{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
   .services .eyebrow{color:#A8D8D2}
   .services .eyebrow::before{background:#A8D8D2}
   .services h2{color:#fff}
@@ -246,19 +250,25 @@
   @media(max-width:680px){
     header.nav{backdrop-filter:none;-webkit-backdrop-filter:none}
     .nav-links{
-      position:fixed;inset:0;background:var(--coral);flex-direction:column;
-      justify-content:center;align-items:flex-start;gap:6px;
+      position:fixed;inset:0;
+      background:
+        radial-gradient(circle at 86% 8%, rgba(255,255,255,.10), transparent 52%),
+        var(--coral);
+      flex-direction:column;
+      justify-content:center;align-items:flex-start;gap:20px;
       padding:90px 34px 48px;z-index:55;
       transform:translateX(100%);transition:transform .4s cubic-bezier(.7,0,.2,1);
     }
+    .neuro{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:0;transition:opacity .9s ease}
+    .nav-links.open .neuro{opacity:1}
     .nav-links.open{transform:none}
     .nav-links a.lnk{
       font-family:'Fraunces',serif;font-size:2rem;font-weight:600;color:#fff;
-      padding:12px 0;width:100%;border-bottom:1px solid rgba(255,255,255,.16);transition:opacity .2s;
+      padding:8px 0;width:100%;transition:opacity .2s;
     }
     .nav-links a.lnk:hover{color:#fff;opacity:.75}
     .nav-cta{
-      margin-top:28px;align-self:stretch;justify-content:center;
+      margin-top:52px;align-self:stretch;justify-content:center;
       background:#fff;color:var(--coral-deep);font-size:1.05rem;padding:16px 24px;
     }
     .nav-cta:hover{background:var(--ink);color:#fff}
@@ -287,6 +297,7 @@
   <div class="wrap nav-inner">
     <a href="#top" class="logo">Jay<span>Rai</span></a>
     <nav class="nav-links" id="navLinks">
+      <canvas class="neuro" id="neuro" aria-hidden="true"></canvas>
       <a class="lnk" href="#approach">How I help</a>
       <a class="lnk" href="#book">The book</a>
       <a class="lnk" href="#about">About</a>
@@ -305,16 +316,16 @@
     <div class="hero-copy reveal">
       <div class="rating"><span class="stars">★★★★★</span> Trusted by leaders at Google, Amazon &amp; Salesforce</div>
       <h1 class="headline">Your brain is a brilliant <em>liar</em>.</h1>
-      <div class="tagline">Therapist backed by science</div>
-      <p class="lede">Neuroscience-backed therapy that helps high performers break the patterns holding them back — and quit therapy for good.</p>
+      <div class="tagline">Therapist backed by neuroscience</div>
+      <p class="lede">Most therapists want to keep you. I want to lose you — for all the right reasons.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="/get-started">Get Started <span class="btn-arrow">→</span></a>
       </div>
     </div>
     <div class="hero-media reveal">
       <svg class="synapse" viewBox="0 0 120 120" fill="none">
-        <circle cx="20" cy="24" r="4" fill="#7C4DD6"/><circle cx="96" cy="40" r="4" fill="#1F4E4A"/>
-        <circle cx="58" cy="92" r="4" fill="#7C4DD6"/><circle cx="84" cy="98" r="3" fill="#1F4E4A"/>
+        <circle cx="20" cy="24" r="4" fill="#28607E"/><circle cx="96" cy="40" r="4" fill="#1C4A5E"/>
+        <circle cx="58" cy="92" r="4" fill="#28607E"/><circle cx="84" cy="98" r="3" fill="#1C4A5E"/>
         <path d="M20 24 L58 92 M96 40 L58 92 M58 92 L84 98 M20 24 L96 40" stroke="#191C28" stroke-width="1" opacity=".4"/>
       </svg>
       <div class="frame">
@@ -356,24 +367,23 @@
 <section class="approach" id="approach">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <h2>Science you can feel.<br>Tools you can use tomorrow.</h2>
-      <p>I bring together three things that rarely sit in one room. Neuroscience explains why you do what you do. Therapy helps you face it. Mindfulness helps you hold it.</p>
+      <h2>Neuroscience you can feel.<br>Tools that <em style="font-style:italic;color:#A9CBDA">actually work</em>.</h2>
     </div>
     <div class="pillars">
       <div class="pillar reveal">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 0-4 4 4 4 0 0 0-2 7 3 3 0 0 0 2 5 3 3 0 0 0 4 1 3 3 0 0 0 4-1 3 3 0 0 0 2-5 4 4 0 0 0-2-7 4 4 0 0 0-4-4Z"/><path d="M12 7v12"/></svg></div>
         <h3>Neuroscience</h3>
-        <p>The hard science of how your brain forms habits, fear and focus — so change is built on what actually drives behaviour, not guesswork.</p>
+        <p>The brain science of why the pattern keeps winning. And how to change that.</p>
       </div>
       <div class="pillar reveal">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.5 9 2.5 5 6 5c2 0 3.2 1.2 4 2.5C10.8 6.2 12 5 14 5c3.5 0 5.5 4 3.5 7.5C19 16.65 12 21 12 21Z"/></svg></div>
         <h3>Psychotherapy</h3>
-        <p>The depth of CBT and REBT to face what's really going on — practical, evidence-led work shaped at The Priory, the UK's leading trauma clinic.</p>
+        <p>Practical. Evidence-led. Shaped at the UK's leading trauma clinic.</p>
       </div>
       <div class="pillar reveal">
         <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <h3>Mindfulness</h3>
-        <p>The stillness of Eastern mindfulness to hold it all together — turning insight into calm, steady change you can sustain under pressure.</p>
+        <p>The stillness to hold it together under pressure.</p>
       </div>
     </div>
     <p class="closer reveal">Good therapy shouldn't keep you coming back. It should give you the tools to <b>quit therapy for good.</b></p>
@@ -390,11 +400,14 @@
     <div class="book-info reveal">
       <h2>Brain Tools for the Busy</h2>
       <p class="formats">Published by Wiley</p>
-      <p style="color:var(--ink-soft);font-size:1.06rem;">Boost your mind, mood and focus with practical, science-backed tools designed for people who don't have time to waste.</p>
+      <span class="award"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-right:7px"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg>Finalist — 2026 Business Book Awards UK (Wellness)</span>
+      <p style="color:var(--ink-soft);font-size:1.06rem;">Practical, science-backed tools for people who want results—not more self-help.</p>
       <blockquote class="quote">
         A must-read for anyone eager to sharpen their skills and tackle life's challenges with confidence.
         <cite>— Dr Brenda Williams, Reader in Neuroscience Education, King's College London</cite>
       </blockquote>
+    </div>
+    <div style="grid-column:1/-1;text-align:center;" class="reveal">
       <a class="btn btn-primary" href="https://www.amazon.co.uk/dp/1394218419" target="_blank" rel="noopener">Get the book <span class="btn-arrow">→</span></a>
     </div>
   </div>
@@ -404,23 +417,24 @@
 <section class="testi">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <h2>Real results, not endless sessions</h2>
+      <h2>What clients actually say</h2>
+      <p style="font-size:.92rem;letter-spacing:.04em;">Verified recommendations from LinkedIn.</p>
     </div>
     <div class="testi-grid">
       <div class="tcard reveal">
         <span class="stars">★★★★★</span>
-        <p>"Sceptical at first, but Jay's approach delivers real results."</p>
-        <span class="who">Workshop attendee</span>
+        <p>"Jay brings a rare combination of neuroscience expertise, openness and real-world practicality."</p>
+        <span class="who">Shelley · Capgemini</span>
       </div>
       <div class="tcard reveal">
         <span class="stars">★★★★★</span>
-        <p>"Jay's science-backed method helped me finally break unhelpful patterns."</p>
-        <span class="who">1-on-1 client</span>
+        <p>"Jay is a wonderful professional and a delight to work with. I would highly recommend tapping into her expertise."</p>
+        <span class="who">Mitalee · Google</span>
       </div>
       <div class="tcard reveal">
         <span class="stars">★★★★★</span>
-        <p>"No fluff — just clarity, focus, and real, measurable progress."</p>
-        <span class="who">Corporate keynote audience</span>
+        <p>"Jay provided invaluable insights, tips and tricks, based on her fantastic ability to distil key neuroscience concepts and communicate them powerfully."</p>
+        <span class="who">Svetlana · Amazon</span>
       </div>
     </div>
     <div style="text-align:center;margin-top:40px;" class="reveal"><a class="btn btn-primary" href="/get-started">Get Started <span class="btn-arrow">→</span></a></div>
@@ -436,12 +450,17 @@
       <img src="images/speaking-3m.jpeg" alt="Jay Rai delivering a 3M keynote">
     </div>
     <div class="about-info reveal">
-      <h2 style="font-size:clamp(2rem,3.4vw,2.7rem);margin:0 0 16px;">Leading-edge therapy, grounded in real-world pressure</h2>
-      <p style="color:var(--ink-soft);font-size:1.05rem;">After a successful career in investment management, I understand the relentless demands busy professionals face — and the need for solutions that are fast and effective. Trained in neuroscience and psychology, with hands-on experience at The Priory, I give you practical tools to break unproductive cycles and move forward.</p>
+      <h2 style="font-size:clamp(2rem,3.4vw,2.7rem);margin:0 0 16px;">Therapy built for real-world pressure</h2>
+      <p style="color:var(--ink-soft);font-size:1.05rem;">I spent years in investment management before I understood why smart, capable people keep getting in their own way. So I went and studied why it happens. MSc in Neuroscience at King's College London. Clinical training at The Priory — the UK's leading addiction and trauma clinic.</p>
+      <p style="color:var(--ink-soft);font-size:1.05rem;margin-top:14px;">I've sat with people at both ends of what a human being can experience. From the depths of addiction to the boardrooms of Google, Amazon and Credit Suisse.</p>
+      <p style="color:var(--ink);font-size:1.05rem;margin-top:14px;font-weight:500;line-height:2.2;">The pattern is always the same.<br>And so is the way through.</p>
       <ul class="creds">
-        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>MSc Neuroscience &amp; Psychology of Mental Health</b>, King's College London — specialism in Empowerment.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>MSc Neuroscience &amp; Psychology of Mental Health</b>, King's College London.</span></li>
         <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Qualified with honours in CBT / REBT therapy</b> at CCBT, Regent's University.</span></li>
-        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Forbes contributor</b> and member of the British Neuroscience Association.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Executive Presence &amp; Influence</b> — Wharton, University of Pennsylvania.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Clinical training at The Priory</b> — the UK's leading addiction &amp; trauma clinic.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>Forbes Coaches Council</b> member.</span></li>
+        <li><span class="tick"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg></span><span><b>British Neuroscience Association</b> member.</span></li>
       </ul>
       <div style="margin-top:28px;"><a class="btn btn-ghost" href="/get-started">Get Started <span class="btn-arrow">→</span></a></div>
     </div>
@@ -450,9 +469,10 @@
 
 <!-- ===== SERVICES / PRICING ===== -->
 <section class="services" id="services">
+  <canvas class="sec-neuro" id="neuroServices" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>A short-term investment with lifelong benefits</h2>
+      <h2>The work is short.<br>The change isn't.</h2>
       <p>No endless cycles, no one-size-fits-all advice — just real progress. We'll start with a free 15-minute call to explore how I can support you.</p>
     </div>
     <div class="price-grid">
@@ -470,14 +490,14 @@
 <section class="final" id="contact">
   <div class="wrap">
     <div class="reveal">
-      <h2>Ready to run your mind, instead of letting it run you?</h2>
-      <p class="sub">Let's start with a free 15-minute call. No pressure, no jargon — just a conversation about where you want to go next.</p>
+      <h2>Ready to stop believing everything your brain tells you?</h2>
+      <p class="sub">Book a free 15-minute call and let's have an honest conversation about where you're stuck and what to do next.</p>
       <a class="btn btn-primary" href="/newsletter">Get Started <span class="btn-arrow">→</span></a>
     </div>
 
     <div class="news reveal">
       <div>
-        <h3>Get mentally stronger</h3>
+        <h3>Brain Tools. Straight to your inbox. No filler.</h3>
         <p>Science-backed tips and tools, straight to your inbox. We respect your privacy.</p>
       </div>
       <form onsubmit="this.querySelector('.ok').style.display='block';return false;">
@@ -495,9 +515,10 @@
   <div class="wrap foot-inner">
     <div>
       <div class="foot-logo">Jay<span>Rai</span></div>
-      <div class="foot-tag">Mental Strength &amp; Empowerment Expert · Therapist backed by science</div>
+      <div class="foot-tag">Mental Strength &amp; Empowerment Expert · Therapist backed by neuroscience</div>
       <div class="foot-social">
         <a href="http://www.linkedin.com/in/jayrai" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-4 0v6h-4v-10h4v2"/><rect x="2" y="9" width="4" height="11"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://x.com/jayrai" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M4 3 L20 21 M20 3 L4 21" stroke-linecap="round"/></svg></a>
         <a href="https://www.instagram.com/jayrai.empower" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="var(--ink-soft)" stroke="none"/></svg></a>
         <a href="https://www.youtube.com/@jayrai.empower" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22 8a3 3 0 0 0-2-2c-2-.5-8-.5-8-.5s-6 0-8 .5a3 3 0 0 0-2 2 31 31 0 0 0 0 8 3 3 0 0 0 2 2c2 .5 8 .5 8 .5s6 0 8-.5a3 3 0 0 0 2-2 31 31 0 0 0 0-8Z"/><path d="m10 15 5-3-5-3Z" fill="var(--ink-soft)" stroke="none"/></svg></a>
       </div>
@@ -520,10 +541,87 @@
 
   // Mobile menu
   const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+
+  // Animated neural network (reusable: menu, sections, form)
+  class NeuroField{
+    constructor(canvas,host,opts={}){
+      this.c=canvas;this.host=host;this.ctx=canvas.getContext('2d');
+      this.nodes=[];this.pulses=[];this.raf=null;this.pt=0;this.built=false;this.dirty=false;
+      this.la=opts.lineAlpha??.16;this.na=opts.nodeAlpha??.55;this.dens=opts.density??15000;
+      this.reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+      addEventListener('resize',()=>{this.dirty=true;if(this.raf)this.size();});
+    }
+    size(){
+      let w,h;
+      if(this.host&&this.host.getBoundingClientRect){const r=this.host.getBoundingClientRect();w=r.width;h=r.height;}
+      else{w=innerWidth;h=innerHeight;}
+      this.w=w;this.h=h;
+      const dpr=Math.min(devicePixelRatio||1,2);
+      this.c.width=w*dpr;this.c.height=h*dpr;this.ctx.setTransform(dpr,0,0,dpr,0,0);
+      this.build();this.built=true;this.dirty=false;
+    }
+    build(){
+      const count=Math.round(Math.min(38,Math.max(16,this.w*this.h/this.dens)));
+      this.nodes=[];
+      for(let i=0;i<count;i++)this.nodes.push({
+        x:Math.random()*this.w,y:Math.random()*this.h,
+        vx:(Math.random()-.5)*.34,vy:(Math.random()-.5)*.34,
+        r:Math.random()<.18?3.1:1.7+Math.random()
+      });
+    }
+    start(){
+      if(!this.built||this.dirty)this.size();
+      if(this.reduced){this.draw();return;}
+      if(this.raf)return;
+      const loop=()=>{this.step();this.draw();this.raf=requestAnimationFrame(loop);};
+      this.raf=requestAnimationFrame(loop);
+    }
+    stop(){cancelAnimationFrame(this.raf);this.raf=null;}
+    step(){
+      for(const p of this.nodes){
+        p.x+=p.vx;p.y+=p.vy;
+        if(p.x<0||p.x>this.w)p.vx*=-1;
+        if(p.y<0||p.y>this.h)p.vy*=-1;
+        p.x=Math.max(0,Math.min(this.w,p.x));p.y=Math.max(0,Math.min(this.h,p.y));
+      }
+      if(--this.pt<=0){
+        this.pt=38+Math.random()*55;
+        const a=this.nodes[Math.floor(Math.random()*this.nodes.length)];
+        let b=null,bd=140*140;
+        for(const o of this.nodes){if(o===a)continue;const d=(o.x-a.x)**2+(o.y-a.y)**2;if(d<bd){bd=d;b=o;}}
+        if(b)this.pulses.push({a,b,t:0,sp:.011+Math.random()*.01});
+      }
+      for(const pl of this.pulses)pl.t+=pl.sp;
+      this.pulses=this.pulses.filter(pl=>pl.t<1);
+    }
+    draw(){
+      const ctx=this.ctx,n=this.nodes,TH=134;ctx.clearRect(0,0,this.w,this.h);
+      for(let i=0;i<n.length;i++)for(let j=i+1;j<n.length;j++){
+        const dx=n[i].x-n[j].x,dy=n[i].y-n[j].y,d=Math.hypot(dx,dy);
+        if(d<TH){ctx.strokeStyle=`rgba(255,255,255,${(1-d/TH)*this.la})`;ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(n[i].x,n[i].y);ctx.lineTo(n[j].x,n[j].y);ctx.stroke();}
+      }
+      for(const p of n){ctx.fillStyle=`rgba(255,255,255,${this.na})`;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill();}
+      for(const pl of this.pulses){
+        const x=pl.a.x+(pl.b.x-pl.a.x)*pl.t,y=pl.a.y+(pl.b.y-pl.a.y)*pl.t,g=Math.sin(pl.t*Math.PI);
+        ctx.fillStyle=`rgba(255,255,255,${.9*g})`;ctx.shadowColor='rgba(255,255,255,.85)';ctx.shadowBlur=9;
+        ctx.beginPath();ctx.arc(x,y,2.5,0,7);ctx.fill();ctx.shadowBlur=0;
+      }
+    }
+  }
+  const neuro=new NeuroField(document.getElementById('neuro'),links);
+
+  // Neural field behind the pricing section — runs only while in view
+  const servicesEl=document.getElementById('services'),servicesCanvas=document.getElementById('neuroServices');
+  if(servicesEl&&servicesCanvas){
+    const sNeuro=new NeuroField(servicesCanvas,servicesEl,{lineAlpha:.13,nodeAlpha:.42,density:17000});
+    new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?sNeuro.start():sNeuro.stop()),{threshold:0}).observe(servicesEl);
+  }
+
   function setMenu(open){
     links.classList.toggle('open',open);
     nav.classList.toggle('menu-open',open);
     document.body.style.overflow=open?'hidden':'';
+    if(open)neuro.start();else neuro.stop();
   }
   burger.addEventListener('click',()=>setMenu(!links.classList.contains('open')));
   links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
